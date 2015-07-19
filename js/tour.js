@@ -2,6 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+function privacyPrefsClick(event) {
+  event.preventDefault();
+  Mozilla.UITour.openPreferences("privacy");
+}
+
 function step1() {
   var buttons = [
     {
@@ -56,4 +61,7 @@ function doneTour() {
 }
 
 // Start the tour
+[...document.querySelectorAll(".prefsLink")].forEach(function(link) {
+  link.addEventListener("click", privacyPrefsClick);
+});
 step1();

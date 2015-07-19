@@ -1,0 +1,27 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: rgb(108,192,66);
+  bottom: 0;
+  color: white;
+  position: absolute;
+  width: 100%;
+}
+
+header a {
+  color: white;
+}
+
+header > * {
+  box-sizing: border-box;
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 49%;
+}

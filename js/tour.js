@@ -14,7 +14,7 @@ function step1() {
       style: "text",
     },
     {
-      callback: step3,
+      callback: step2,
       label: "Next",
       style: "primary",
     },
@@ -28,7 +28,8 @@ function step1() {
 }
 
 function step2() {
-  // TODO
+  var infoPanel = document.getElementById("infoPanel");
+  infoPanel.hidden = false;
 }
 
 function step3() {
@@ -60,8 +61,22 @@ function doneTour() {
   Mozilla.UITour.hideMenu("controlCenter");
 }
 
-// Start the tour
+
+// Setup event listeners
+
 [...document.querySelectorAll(".prefsLink")].forEach(function(link) {
   link.addEventListener("click", privacyPrefsClick);
 });
+document.querySelector("#infoPanel > .footer > button").addEventListener("click", function(event) {
+  document.getElementById("infoPanel").hidden = true;
+  step3();
+});
+
+document.addEventListener("pagehide", function() {
+  Mozilla.UITour.hideMenu("controlCenter");
+  Mozilla.UITour.hideInfo();
+
+});
+
+// Start the tour
 step1();

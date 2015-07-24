@@ -4,13 +4,14 @@
 
 body {
   margin: 0;
+  font: -moz-document;
 }
 
 header {
   background-color: rgb(108,192,66);
   bottom: 0;
   color: white;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
@@ -24,4 +25,78 @@ header > * {
   padding-left: 5%;
   padding-right: 5%;
   width: 49%;
+}
+
+.flex-container {
+  align-content: center;
+  align-items: flex-start;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-height: 80vh;
+}
+
+.flex-container > * {
+  border: 1px solid silver;
+  border-radius: 2%;
+  margin: 5px;
+}
+
+.ad {
+  background-color: rgb(108,192,66);
+  position: relative;
+}
+
+.content {
+  background-color: #aaa;
+}
+
+
+.topAd {
+  box-sizing: border-box;
+  height: 20vh;
+  width: 500px;
+}
+
+article {
+  box-sizing: border-box;
+  flex-basis: 55vh;
+  flex-grow: 1;
+  width: 500px;
+}
+
+.sidebarBoxes {
+  height: 24vh;
+  width: 300px;
+}
+
+#infoPanel {
+  -moz-user-select: none;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  box-shadow: 3px 3px 15px #444;
+  box-sizing: border-box;
+  cursor: default;
+  left: -300px;
+  padding: 10px;
+  position: absolute;
+  width: 300px;
+}
+
+#infoPanel > .footer {
+  background-color: rgb(240,240,240);
+  color: rgb(179,177,179);
+  margin: -10px;
+  padding: 10px;
+  text-align: right;
+}
+
+#infoPanel > .footer > button {
+  background-color: rgb(108,192,66);
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  color: white;
+  padding: 5px;
 }

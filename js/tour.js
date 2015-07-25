@@ -59,6 +59,7 @@ function step3() {
 function doneTour() {
   Mozilla.UITour.hideInfo();
   Mozilla.UITour.hideMenu("controlCenter");
+  document.querySelector(".flex-container").innerHTML = "The tour is done!";
 }
 
 
@@ -78,5 +79,13 @@ document.addEventListener("pagehide", function() {
 
 });
 
-// Start the tour
-step1();
+setTimeout(function startTour() {
+  Mozilla.UITour.getConfiguration("availableTargets", function(config) {
+    if (!config.targets.indexOf("trackingProtection") === -1) {
+      alert("Tracking protection is not enabled");
+    }
+  });
+
+  // Start the tour after a delay since the shield takes time to appear.
+  step1();
+}, 500);
